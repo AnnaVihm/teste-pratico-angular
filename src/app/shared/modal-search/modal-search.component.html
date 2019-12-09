@@ -1,0 +1,31 @@
+<div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Endereços</h4>
+        <button type="button" class="close" aria-label="Close" (click)="close()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let end of list">
+                <div class="form-check" >
+                    <input class="form-check-input" type="radio" [value]="end" id="{{cep}}" [(ngModel)]="endereco">
+                    <label class="form-check-label" for="{{cep}}">
+                        <h6>{{end?.localidade}}-{{end?.uf}}</h6>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h6>Bairro / CEP</h6>
+                                <p>{{end?.bairro}} - {{end?.cep}}</p>
+                            </div>
+                            <div class="col-lg-6">
+                                <h6>Logradouro / Complemento</h6>
+                                <p>{{end?.logradouro}} - {{end?.complemento ? end?.complemento : "Nenhuma informação"}}</p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </li>
+        </ul>
+    </div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="save()">Ok</button>
+</div>
