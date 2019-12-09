@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { NgbModalRef, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-modal-search',
@@ -12,7 +11,7 @@ export class ModalSearchComponent implements OnInit {
   @Input() list : any[] = [];
   @Output() saveEvent = new EventEmitter;
   @Output() modalClose = new EventEmitter;
-  form:FormGroup
+
   endereco:any;
   
   constructor() { }
